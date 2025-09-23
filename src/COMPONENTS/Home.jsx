@@ -74,7 +74,7 @@ function Home() {
     <div>
       <Navbar />
       <div className="home-container">
-        <h1>Welcome, {username}!</h1>
+        <h1> {username}!</h1>
         <h2>Your Portfolio</h2>
 
         {portfolio ? (
