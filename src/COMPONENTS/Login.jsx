@@ -5,12 +5,14 @@ import "./Login.css";
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate(); // initialize navigate
+  const navigate = useNavigate();
+  const API_URL = "https://cicdprojectbackend-production.up.railway.app"; // live backend URL
 
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:8081/api/auth/login", {
+      // Login API call
+      const response = await fetch(`${API_URL}/api/auth/login`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
@@ -20,16 +22,14 @@ function Login() {
         const data = await response.json();
         localStorage.setItem("username", data.username);
 
-        const userResponse = await fetch(
-          `http://localhost:8081/api/auth/user/${data.username}`
-        );
-
+        // Get user details
+        const userResponse = await fetch(`${API_URL}/api/auth/user/${data.username}`);
         if (userResponse.ok) {
           const userData = await userResponse.json();
           localStorage.setItem("userId", userData.id);
         }
 
-        // Navigate to Home.jsx after successful login
+        // Navigate to Home page
         navigate("/home");
       } else {
         alert("Invalid username or password");
@@ -42,7 +42,8 @@ function Login() {
 
   const handleSignup = async () => {
     try {
-      const response = await fetch("http://localhost:8081/api/auth/signup", {
+      // Signup API call
+      const response = await fetch(`${API_URL}/api/auth/signup`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, password }),
@@ -65,7 +66,6 @@ function Login() {
       {/* Portfolio app in center */}
       <div className="portfolio-container">
         <h1>Portfolio App</h1>
-      
       </div>
 
       {/* Login inputs at top-right */}
