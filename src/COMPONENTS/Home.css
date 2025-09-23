@@ -1,0 +1,181 @@
+/* --- Global Page Styling --- */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+  color: #222;
+}
+
+/* --- Main Container --- */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6rem 2rem 3rem 2rem; /* increased top padding for breathing space */
+  min-height: 100vh;
+  gap: 3rem;
+}
+
+/* --- Headings --- */
+.home-container h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0;
+  text-align: center;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.1);
+  color: #1a1a1a;
+}
+
+.home-container h2 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+}
+
+/* --- Portfolio Card --- */
+.portfolio-card {
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(15px);
+  border-radius: 25px;
+  padding: 2rem 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.4s ease;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  border: 1px solid rgba(255,255,255,0.3);
+  position: relative;
+}
+
+.portfolio-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.2);
+}
+
+/* --- Profile Image --- */
+.portfolio-image {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255,255,255,0.6);
+  transition: all 0.3s ease;
+}
+
+.portfolio-image:hover {
+  transform: scale(1.1);
+}
+
+/* --- Card Text --- */
+.portfolio-card h3 {
+  font-size: 1.9rem;
+  margin: 0.5rem 0;
+  text-align: center;
+  font-weight: 600;
+}
+
+.portfolio-card p {
+  font-size: 1rem;
+  color: #222;
+  text-align: center;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+/* --- Skills Badges --- */
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.skill-badge {
+  padding: 0.4rem 0.9rem;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #007bff, #00d4ff);
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: transform 0.2s ease;
+}
+
+.skill-badge:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* --- Projects List --- */
+.projects-container {
+  margin-top: 1.5rem;
+  width: 100%;
+  text-align: center;
+}
+
+.projects-container strong {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 0.8rem;
+}
+
+.projects-container ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.projects-container li {
+  background: linear-gradient(135deg, #007bff, #00d4ff);
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.projects-container li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+/* --- Social Links --- */
+.social-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top:
+}
+
+
+.social-btn {
+  display: inline-block;
+  padding: 0.5rem 1.2rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #007bff, #00d4ff);
+  color: #fff !important;   /* force white text */
+  font-weight: 500;
+  text-decoration: none !important;  /* remove underline */
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+.social-btn:hover {
+  background: linear-gradient(135deg, #0056b3, #00aabb);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  color: #fff !important;   /* stay white */
+}
