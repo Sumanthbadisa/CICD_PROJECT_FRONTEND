@@ -6,17 +6,15 @@ function Home() {
   const [portfolio, setPortfolio] = useState(null);
   const userId = localStorage.getItem("userId");
   const username = localStorage.getItem("username");
+  const API_URL = "https://cicdprojectbackend-production.up.railway.app";
 
   useEffect(() => {
     const fetchPortfolio = async () => {
       try {
-        const response = await fetch(
-          `http://localhost:8081/api/portfolio/user/${userId}`
-        );
+        const response = await fetch(`${API_URL}/api/portfolio/user/${userId}`);
         if (response.ok) {
           const data = await response.json();
           console.log("Portfolio API response:", data);
-
           if (data) {
             setPortfolio(data);
           }
@@ -83,7 +81,7 @@ function Home() {
           <div className="portfolio-card">
             {portfolio.imageUrl && (
               <img
-                src={`http://localhost:8081${portfolio.imageUrl}`}
+                src={`${API_URL}${portfolio.imageUrl}`}
                 alt="Profile"
                 className="portfolio-image"
                 onError={(e) => {
