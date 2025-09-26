@@ -86,9 +86,9 @@ function Login() {
             required
           />
           <button type="submit">Login</button>
-          <button type="button" onClick={handleSignup}>
+          {/* <button type="button" onClick={handleSignup}>
             Signup
-          </button>
+          </button> */}
         </form>
       </div>
     </div>
